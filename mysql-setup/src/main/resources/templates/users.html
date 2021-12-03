@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:include="fragments/navbar.html">
+
+</header>
+
+<div th:each="user : ${allUsers}">
+    <a th:href="@{/users/{id}(id=${user.id})}">Show user <span th:text="${user.id}"></span></a>
+</div>
+
+</body>
+</html>

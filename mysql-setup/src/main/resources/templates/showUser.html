@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:include="fragments/navbar.html">
+
+</header>
+
+<div th:if="${userPresent}">
+    <p>ID: <span th:text="${user.id}"></span></p>
+    <p>name: <span th:text="${user.name}"></span></p>
+    <p>email: <span th:text="${user.email}"></span></p>
+</div>
+
+<div th:unless="${userPresent}">
+    <p>No user with id <span th:text="${notFoundId}"></span> is found</p>
+</div>
+
+</body>
+</html>
